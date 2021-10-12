@@ -13,8 +13,9 @@
     <ul id="people" class=""></ul>
 
     <button id="button">GET Friends List</button>
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <input type="text" id="friend-search" placeholder="Enter Friend Name"/>
+    <button id="friend-submit" type="submit">Submit</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
     <script>
       document.getElementById("button").onclick = function () {
         axios
@@ -33,5 +34,13 @@
           });
       };
     </script>
+
+<section class='response-area'>
+  <ol>
+  </ol>
+</section>
+
+      <script src="./node_modules/axios/dist/axios.min.js"></script>
+      <script src="./client/client.js"></script>
   </body>
 </html>

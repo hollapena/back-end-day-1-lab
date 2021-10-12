@@ -6,9 +6,15 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+let friends =["Nitin", "Eric", "Jeddy", "Cameron", "Riley"];
+
 app.get("/api/users", (req, res) => {
-    let friends =["Nitin", "Eric", "Jeddy", "Cameron", "Riley"];
-    res.status(200).send(friends);
+    if (req.query.item){
+        const filteredItems = friends.filter(invItem => invItem.toLowerCase().includes(req.query.item.toLowerCase()))
+        res.status(200).send(filteredItems)
+    }else {
+        res.status(200).send(friends)
+    }
 });
 
 app.get("/weather/:temperature", (req,res) => {
